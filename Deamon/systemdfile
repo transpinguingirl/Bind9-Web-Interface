@@ -1,0 +1,11 @@
+[Unit]
+Description=Bind9-Python api (with out Webpage deamon only)
+
+[Service]
+Type=forking
+ExecStart=/lib/Bind9-Webinterface/run.sh
+ExecStop=/lib/Bind9-Webinterface/stop.sh
+PIDFile=/tmp/Bind9-Webinterface-deamon.pid
+
+[Install]
+WantedBy=multi-user.target
