@@ -1,4 +1,5 @@
 class zone:
+    TTL          = []
     SOArecords   = []
     Arecords     = []
     AAAArecords  = []
