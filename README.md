@@ -2,7 +2,7 @@
 
 
 #JSON format
-```
+```JSON
 {
   "Domain": "exsample.org",
   "TTL":"1D",
