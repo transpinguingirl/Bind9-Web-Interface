@@ -17,3 +17,5 @@ installall:
 	#@ln -s $LIBRARY_PATH + 'Bind9-Webinterface/CIL.sh'
 installdeamon:
 	@mkdir $LIBRARY_PATH + 'Bind9-Webinterface/'
+debug:
+	cd Deamon ; python3

@@ -1,38 +1,42 @@
-import types
+from . import types
 def loadzone(file):
-    with open(file) as zonefile:
+    with open(file) as zonefileraw:
         zonefile = types.zone()
-        for line in zonefile:
+        for line in zonefileraw:
             if "$TTL " in line:
                 TTL = line.split(" ")[1]
-            else if "SOA" in line:
+            elif "SOA" in line:
                 print("SOA")
-            else if " NS " in line:
-                zonefile.addNS(*record(line))
+            elif " NS " in line:
+                print(len(record(line)))
+                zonefile.addNS(record(line))
                 print("NS")
-            else if " A " in line:
+            elif " A " in line:
                 zonefile.addA(*record(line))
                 print("A")
-            else if " MX " in line:
+            elif " MX " in line:
                 zonefile.addMX(*record(line))
                 print("MX")
-            else if " AAAA " in line:
+            elif " AAAA " in line:
                 zonefile.addAAAA(*record(line))
                 print("AAAA")
-            else if " CNAME " in line:
+            elif " CNAME " in line:
                 zonefile.addCNAME(*record(line))
                 print("CNEM")
-            else if " DNAME " in line:
+            elif " DNAME " in line:
                 zonefile.addDNAME(*record(line))
                 print("DNAME")
-            else if " TXT " in line:
+            elif " TXT " in line:
                 zonefile.addTXT(*record(line))
                 print("TXT")
-            else if " IN " in line:
+            elif " IN " in line:
                 print("IN")
         return(zonefile)
 def record(data):
+    print(data)
     data = data.split(" IN ")
+    print(data)
     data[0] = data[0].replace(" ","")
     data[1] = data[1].replace(" ","")
+    print(data)
     return(data[0],data[1])

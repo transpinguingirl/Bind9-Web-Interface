@@ -1,5 +1,6 @@
 class zone:
-    TTL          = []
+    zonefiledict = {"Domain" : '' , "TTL" : '' , "records" : {"SOA" : {} "A" : {} , "AAAA" : {} , "NS" : {} , "MX" : {} , "CNAME" : {} ,  "DNAME"  : {} , "TXT" : {} }}
+    TTL          = ""
     SOArecords   = []
     Arecords     = []
     AAAArecords  = []
@@ -13,24 +14,23 @@ class zone:
     def getAll(self):
         return self.SOArecords + self.Arecords + self.AAAArecords + self.NSrecords + self.MXrecords + self.CNAMErecords + self.DNAMErecords + self.PTRrecords + self.TXTrecords
     def getSOA(self):
-        return self.SOArecords
+        return self.zonefiledict["records"]["SOA"]
     def getA(self):
-        return self.Arecords
+        return self.zonefiledict["records"]["A"]
     def getAAAA(self):
-        return self.AAAArecords
+        return self.zonefiledict["records"]["AAAA"]
     def getNS(self):
-        return self.NSrecords
+        return self.zonefiledict["records"]["NS"]
     def getMX(self):
-        return self.MX
+        return self.zonefiledict["records"]["MX"]
     def getCNAME(self):
-        return self.CNAMErecords
+        return self.zonefiledict["records"]["CNAME"]
     def getDNAME(self):
-        return self.DNAMErecords
+        return self.zonefiledict["records"]["DNAME"]
     def getPTR(self):
-        return self.PTRrecords
+        return self.zonefiledict["records"]["PTR"]
     def getTXT(self):
-        return self.TXTrecords
-
+        return self.zonefiledict["records"]["TXT"]
     def setSOA(self,SOArecord):
         return self.SOArecords.append(SOArecord)
     def addA(self,Arecord):

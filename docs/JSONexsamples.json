@@ -1,9 +1,9 @@
 {
   "Domain": "exsample.org",
   "TTL":"1D",
-  "records": [
+  "records":
     {
-      "SOA": [
+      "SOA":
         {
           "primaryDNS":"ns.nameserver.info.exsample.org.",
           "zone-contact":"mail.exsample.org.",
@@ -14,44 +14,43 @@
           "NX":"2H"
         }
 
-      ],
-      "A": [
+      ,
+      "A":
         {
           "@":"127.0.0.1",
           "www":"127.0.0.1",
           "shop":"127.0.0.2"
         }
-      ],
-      "AAAA" : [
+      ,
+      "AAAA" : 
         {
           "@":"::1",
           "www":"::1",
           "shop":"::1"
         }
-      ],
-      "NS": [
+      ,
+      "NS":
         {
           "@":"ns.nameserver.info.exsample.org.",
           "@":"ns2.nameserver.info.exsample.org.",
           "@":"ns3.nameserver.info.exsample.org.",
           "@":"ns4.nameserver.info.exsample.org."
         }
-      ],
-      "MX": [
+      ,
+      "MX":
         {
           "mail":"10 exsample.org."
         }
-      ],
-      "CNAME": [
+      ,
+      "CNAME":
         {
           "mail":"exsample.org."
         }
-      ],
-      "DNAME": [
+      ,
+      "DNAME":
         {
           "dev":"host.exsample.org"
         }
-      ]
+
     }
-  ]
 }
